@@ -30,9 +30,9 @@ Donde ver: <br/>${
         a.canales
             .map(canal => `- Idioma: ${canal.languaje} <br/>${
                 canal.acestreamIds
-                    .map(a => `<a href="${a.ace}">${a.ace}</a> <br/>`)
+                    .map(a => `<a href="${this.authService.sanitize(a.ace)}">${a.ace}</a> <br/>`)
                     .join(' ')
             } <br/>`)
-            .join()
+            .join(' ')
     }`
 }

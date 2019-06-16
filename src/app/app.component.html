@@ -1,8 +1,11 @@
 <div class="app-container">
 
+    <div *ngIf="!(sportsEvents | async)" class="spinner-container">
+        Cargando..
+    </div>
+
     <ul>
         <li *ngFor="let sp of sportsEvents | async">
-            <!-- {{ parseInfo(sp) }} -->
             <div [innerHTML]="parseInfo(sp)"></div>
         </li>
     </ul>
